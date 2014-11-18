@@ -9,7 +9,7 @@ Include Scripts:
 ```
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<script src="jquery.tweet-linkify.js"></script>
+<script src="tweetLinkIt.js"></script>
 ```
 Apply Script:
 ```
