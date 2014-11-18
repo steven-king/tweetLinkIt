@@ -30,6 +30,6 @@ Wrap in a function and call function  (pageComplete()) after the dynamic content
 <?php
 //run your twitter code and write to the page here.
 // then echo this:
-echo "<script>$('.tweet').tweetLinkify();</script>;"
+echo "<script>pageComplete();</script>;"
 ?>
 ```
