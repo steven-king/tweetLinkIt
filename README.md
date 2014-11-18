@@ -16,7 +16,7 @@ Apply Script:
     $('.tweet').tweetLinkify();
 ```
 Note:
-When applying to a dynamic page the function needs to run after tweets are written to the DOM (HTML page).
+When applying to a dynamic page, for example a php call to twitter, the function needs to run after tweets are written to the DOM (HTML page).
 
 Wrap in a function and call function  (pageComplete()) after the dynamic content is written.
  ```
@@ -26,4 +26,10 @@ Wrap in a function and call function  (pageComplete()) after the dynamic content
         $('.tweet').tweetLinkify();
     }
 </script>
+
+<?php
+//run your twitter code and write to the page here.
+// then echo this:
+echo "<script>$('.tweet').tweetLinkify();</scipt>"
+?>
 ```
