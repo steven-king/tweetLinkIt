@@ -55,21 +55,21 @@
     var hashtagRel = (options.hashtagRel != '') ? 'rel="' + options.hashtagRel + '"' : '';
 
     if (options.excludeHyperlinks != true) {
-      tweet = tweet.replace(/(https\:\/\/|http:\/\/)([www\.]?)([^\s|<]+)/gi, '<a href="$1$2$3" ' + hyperlinkTarget + ' ' + hyperlinkClass + ' ' + hyperlinkRel + '>$1$2$3</a>');
-      tweet = tweet.replace(/([^https\:\/\/]|[^http:\/\/]|^)(www)\.([^\s|<]+)/gi, '$1<a href="http://$2.$3" ' + hyperlinkTarget + ' ' + hyperlinkClass + ' ' + hyperlinkRel + '>$2.$3</a>');
+      tweet = tweet.replace(/(https\:\/\/|http:\/\/)([www\.]?)([^\s|<]+)/gi, '<a target="_blank" href="$1$2$3" ' + hyperlinkTarget + ' ' + hyperlinkClass + ' ' + hyperlinkRel + '>$1$2$3</a>');
+      tweet = tweet.replace(/([^https\:\/\/]|[^http:\/\/]|^)(www)\.([^\s|<]+)/gi, '$1<a target="_blank" href="http://$2.$3" ' + hyperlinkTarget + ' ' + hyperlinkClass + ' ' + hyperlinkRel + '>$2.$3</a>');
       tweet = tweet.replace(/<([^a]|^\/a])([^<>]+)>/g, "&lt;$1$2&gt;").replace(/&lt;\/a&gt;/g, "</a>").replace(/<(.)>/g, "&lt;$1&gt;").replace(/\n/g, '<br />');
     }
 
     if (options.excludeMentions != true) {
       if (options.mentionIntent == false) {
-        tweet = tweet.replace(/(@)(\w+)/g, '<a href="http://twitter.com/$2" ' + mentionTarget + ' ' + mentionClass + ' ' + mentionRel + '>$1$2</a>');
+        tweet = tweet.replace(/(@)(\w+)/g, '<a target="_blank" href="http://twitter.com/$2" ' + mentionTarget + ' ' + mentionClass + ' ' + mentionRel + '>$1$2</a>');
       } else {
-        tweet = tweet.replace(/(@)(\w+)/g, '<a href="http://twitter.com/intent/user?screen_name=$2">$1$2</a>');
+        tweet = tweet.replace(/(@)(\w+)/g, '<a target="_blank" href="http://twitter.com/intent/user?screen_name=$2">$1$2</a>');
       }
     }
 
     if (options.excludeHashtags != true) {
-      tweet = tweet.replace(/(#)(\w+)/g, '<a href="https://twitter.com/search/?src=hash&q=%23$2" ' + hashtagTarget + ' ' + hashtagClass + ' ' + hashtagRel + '>$1$2</a>');
+      tweet = tweet.replace(/(#)(\w+)/g, '<a target="_blank" href="https://twitter.com/search/?src=hash&q=%23$2" ' + hashtagTarget + ' ' + hashtagClass + ' ' + hashtagRel + '>$1$2</a>');
     }
     
     return tweet;
